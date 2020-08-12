@@ -45,7 +45,7 @@ class DashboardController extends Controller
 
     public function settings()
     {
-        $settings = Setting::first();
+        $settings = Setting::firstOrNew(['id' => 1]);
 
         return view('admin.settings.setting',compact('settings'));
     }
